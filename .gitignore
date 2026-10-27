@@ -19,9 +19,9 @@ dist/
 build/
 .pio/
 *.elf
-*.bin
-*.hex
 *.map
+# *.bin e *.hex nao sao ignorados globalmente (podem ser blobs legitimos);
+# saidas de build ficam em build/.
 
 # Hardware (backups do KiCad)
 *-backups/

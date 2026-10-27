@@ -1,0 +1,11 @@
+# Normaliza finais de linha. Scripts executados em shell POSIX exigem LF.
+* text=auto
+.githooks/* text eol=lf
+*.sh text eol=lf
+*.py text eol=lf
+*.md text eol=lf
+*.json text eol=lf
+*.bin binary
+*.hex binary
+*.elf binary
+*.pdf binary
