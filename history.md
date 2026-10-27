@@ -26,6 +26,26 @@ MODELO DE ENTRADA — copiar para o topo da lista
 **Commit:** `<hash curto>` — `<mensagem>`
 -->
 
+## 2026-10-27 — Correção dos workflows de CI
+
+**Tipo:** correção
+**Escopo:** geral
+
+**Contexto:** Após o push, os workflows `backend`, `frontend`, `firmware` e `hil` falharam e o `rag` não executou. Na interface do GitHub os quatro apareciam pelo caminho do arquivo, não pelo `name`, indicando arquivo inválido.
+
+**Ações realizadas:**
+- Reproduzida a falha com PyYAML (instalado fora do repositório): `mapping values are not allowed here` nos quatro arquivos.
+- Causa: `run: echo "preencher: ..."` com `: ` em escalar sem aspas. Valores de `run` passaram a usar aspas simples externas.
+- `rag.yml`: removido o filtro `paths` (os pushes recentes não tocavam `rag/**`) e adicionados `branches: [main]` e `workflow_dispatch`.
+
+**Resultado:** Os cinco arquivos passam no parser local e expõem o `name` esperado. Execução no GitHub ainda não confirmada.
+
+**Arquivos afetados:** `.github/workflows/*.yml`, `.ai/results/2026-10-27-validacao-revisao.md`
+
+**Pendências:** Push e conferência da aba Actions. O `hil.yml` contém acento em texto de `echo`; sem impacto esperado.
+
+**Commit:** `fix(ci): corrige yaml invalido e gatilho do workflow rag`
+
 ## 2026-10-27 — Licença MIT e migração da chave de atribuição
 
 **Tipo:** documentação
