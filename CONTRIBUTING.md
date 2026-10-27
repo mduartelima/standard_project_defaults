@@ -17,3 +17,7 @@ Convenção por camada em `tests/README.md`. Bug corrigido ganha teste de regres
 ## Diretrizes técnicas
 
 `docs/engineering-guidelines.md`.
+
+## Licença
+
+Contribuições ao template são aceitas sob a licença MIT (`LICENSE`). Em projetos derivados, substituir ou remover o `LICENSE` e definir a licença e o titular do próprio projeto.

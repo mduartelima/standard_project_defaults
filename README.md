@@ -50,3 +50,11 @@ tests/                  testes por camada
 - [Testes](tests/README.md)
 - [Contribuindo](CONTRIBUTING.md) e [segurança](SECURITY.md)
 - [Histórico](history.md)
+
+## Licença
+
+Este template é distribuído sob a licença MIT (`LICENSE`). Ao iniciar um projeto a partir dele, **substituir ou remover o `LICENSE`** e ajustar o titular do copyright: a licença do template não se aplica ao código do projeto derivado.
+
+## Autor
+
+Marcelo Duarte Lima — [@mduartelima](https://github.com/mduartelima) — [LinkedIn](https://www.linkedin.com/in/marcelodtlima)
