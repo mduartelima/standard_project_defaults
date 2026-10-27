@@ -1,0 +1,8 @@
+# Responsáveis por revisão (sintaxe do GitHub: padrão seguido de @usuario ou @org/time).
+# Preencher e remover o comentário das linhas desejadas. Conferir a sintaxe na documentação do GitHub.
+#
+# /src/backend/    <@responsavel-backend>
+# /src/frontend/   <@responsavel-frontend>
+# /src/firmware/   <@responsavel-firmware>
+# /src/hardware/   <@responsavel-hardware>
+# /.githooks/      <@responsavel-processo>
