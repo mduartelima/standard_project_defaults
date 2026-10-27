@@ -6,15 +6,20 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
-from query import search  # noqa: E402
+from query import IndexNotFound, search  # noqa: E402
 
 ap = argparse.ArgumentParser()
 ap.add_argument("-k", type=int, default=5)
 k = ap.parse_args().k
 cases = json.loads((Path(__file__).parent / "eval.json").read_text(encoding="utf-8"))
+if not cases:
+    sys.exit("eval.json vazio: adicione casos {question, expected_path}.")
 hits = 0
 for c in cases:
-    paths = [r["path"] for r in search(c["question"], k)]
+    try:
+        paths = [r["path"] for r in search(c["question"], k)]
+    except IndexNotFound as e:
+        sys.exit(str(e))
     ok = c["expected_path"] in paths
     hits += ok
     print(f"{'OK  ' if ok else 'FAIL'} {c['question']}  ->  {paths[:3]}")

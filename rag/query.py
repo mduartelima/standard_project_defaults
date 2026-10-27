@@ -39,25 +39,33 @@ def to_fts_query(q: str) -> str:
     return " OR ".join(f'"{t}"*' for t in dict.fromkeys(tokens))
 
 
+class IndexNotFound(RuntimeError):
+    """Índice ausente: executar `python rag/ingest.py`."""
+
+
 def search(question: str, k: int = 6, kinds: list[str] | None = None) -> list[dict]:
     if not DB_PATH.exists():
-        sys.exit("Índice não encontrado. Execute: python rag/ingest.py")
+        raise IndexNotFound("Índice não encontrado. Execute: python rag/ingest.py")
     fts = to_fts_query(question)
     if not fts:
         return []
-    con = sqlite3.connect(DB_PATH)
+    sql = ("SELECT path, section, kind, line, content, bm25(chunks, 1.0, 2.0) AS score "
+           "FROM chunks WHERE chunks MATCH ?")
+    params: list = [fts]
+    if kinds:  # filtro no SQL: aplicar após o LIMIT descartaria candidatos válidos
+        sql += f" AND kind IN ({','.join('?' * len(kinds))})"
+        params += kinds
     # bm25(): valores menores = mais relevante. Peso maior para o campo 'section'.
-    rows = con.execute(
-        "SELECT path, section, kind, line, content, bm25(chunks, 1.0, 2.0) AS score "
-        "FROM chunks WHERE chunks MATCH ? ORDER BY score LIMIT ?",
-        (fts, k * 5),
-    ).fetchall()
-    con.close()
+    sql += " ORDER BY score LIMIT ?"
+    params.append(k * 5)
+    con = sqlite3.connect(DB_PATH)
+    try:
+        rows = con.execute(sql, params).fetchall()
+    finally:
+        con.close()
     boost = CONFIG.get("kind_boost", {})
     results = []
     for path, section, kind, line, content, score in rows:
-        if kinds and kind not in kinds:
-            continue
         rel = -score * boost.get(kind, 1.0)
         if kind == "decision" and re.search(r"Status:\*\*\s*Substitu", content):
             rel *= 0.5  # decisões revogadas perdem prioridade
@@ -91,7 +99,10 @@ def main() -> int:
     args = ap.parse_args()
 
     kinds = args.kind.split(",") if args.kind else None
-    res = search(args.question, args.k, kinds)
+    try:
+        res = search(args.question, args.k, kinds)
+    except IndexNotFound as e:
+        sys.exit(str(e))
     if args.json:
         print(json.dumps(res, ensure_ascii=False, indent=2))
     elif args.prompt:
