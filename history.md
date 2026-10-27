@@ -26,6 +26,47 @@ MODELO DE ENTRADA — copiar para o topo da lista
 **Commit:** `<hash curto>` — `<mensagem>`
 -->
 
+## 2026-10-27 — README como apresentação do template
+
+**Tipo:** documentação
+**Escopo:** docs
+
+**Contexto:** O `README.md` era um modelo com placeholders e não descrevia o template. Necessidade de texto otimizado para busca web, com objetivo, necessidade atendida, vantagens, implementação e uso.
+
+**Ações realizadas:**
+- Movido o modelo com placeholders para `docs/README.project-template.md`.
+- Reescrito o `README.md` com objetivo, tabela problema-solução, vantagens, funcionamento em camadas de memória, passos de implementação e de uso, estrutura, requisitos, resumo e palavras-chave em inglês, licença e autoria.
+- Recursos futuros (busca vetorial, servidor MCP) descritos como evolução, não como funcionalidade atual.
+- Acrescentados o aviso em `CONTRIBUTING.md` e o item em `CHANGELOG.md`.
+
+**Resultado:** Varredura de caminhos citados sem ausências; sem emojis; `rag/eval.py` com hit rate@5 de 3/3; 5 testes do RAG passando. Renderização no GitHub não verificada.
+
+**Arquivos afetados:** `README.md`, `docs/README.project-template.md`, `CONTRIBUTING.md`, `CHANGELOG.md`, `history.md`
+
+**Pendências:** Autorização para push. Definir no GitHub a descrição e os tópicos do repositório e habilitar "Template repository" (ação manual). Conferir a renderização após o push.
+
+**Commit:** `docs: move o modelo de readme para docs/README.project-template.md` e `docs: reescreve o readme como apresentacao do template`
+
+## 2026-10-27 — Publicação das versões 0.1.0 e 0.1.1
+
+**Tipo:** infraestrutura
+**Escopo:** geral
+
+**Contexto:** Publicação das versões do template no GitHub após a integração da `develop` na `main`.
+
+**Ações realizadas:**
+- Enviadas ao remoto `main` (`22b2bab`), `develop` e as tags anotadas `v0.1.0` e `v0.1.1`, sem `--force`.
+- Apagadas pelo responsável as execuções de CI com falha geradas pelos workflows de YAML inválido.
+- Publicadas pelo responsável as GitHub Releases `v0.1.0` e `v0.1.1`, com notas derivadas do `CHANGELOG.md` (criação manual pela interface web; `gh` ausente na máquina).
+
+**Resultado:** `main` e `develop` em `22b2bab`, sincronizadas com o remoto. Execução do `rag.yml` no GitHub confirmada pelo responsável.
+
+**Arquivos afetados:** `history.md`, `.ai/memory/context.md`
+
+**Pendências:** Opcional: ampliar o `deny` de `.claude/settings.json` (`rm -fr`, `Remove-Item -Recurse`, `git push --force-with-lease`).
+
+**Commit:** `docs(ai): registra publicacao das versoes e atualizacao do readme`
+
 ## 2026-10-27 — Versionamento 0.1.1
 
 **Tipo:** documentação
