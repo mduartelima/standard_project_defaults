@@ -10,6 +10,10 @@
 | Codificação | <JSON | Protobuf | CBOR | outro> |
 | Versão do contrato | <MAJOR.MINOR> |
 
+## Schemas
+
+Fonte única em `src/protocol/` (formato e geração de código descritos no README dessa pasta). Este documento descreve as mensagens; o schema é a referência.
+
 ## Mensagens
 
 | Nome | Sentido | Tópico/rota | Frequência | Schema |

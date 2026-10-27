@@ -34,6 +34,6 @@ Placa, revisão, MCU, periféricos, alimentação, conectores. Pinout em `src/ha
 | Interface | Entre | Protocolo | Especificação |
 |---|---|---|---|
 | API REST | frontend ↔ backend | HTTP/JSON | `docs/api.md` ou OpenAPI |
-| Telemetria | firmware ↔ backend | <MQTT> | `docs/protocol.md` |
+| Telemetria | firmware ↔ backend | <MQTT> | `docs/protocol.md` e schemas em `src/protocol/` |
 
 Contratos versionados; qualquer alteração exige entrada em `decisions.md`.

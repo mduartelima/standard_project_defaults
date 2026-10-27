@@ -10,6 +10,7 @@
 | Frontend | `src/frontend/` | <ex.: TypeScript/React> |
 | Firmware | `src/firmware/` | <ex.: C/ESP-IDF, Zephyr> |
 | Hardware | `src/hardware/` | <ex.: KiCad> |
+| Protocolo | `src/protocol/` | <ex.: Protobuf> |
 | RAG local | `rag/` | Python + SQLite FTS5 |
 
 ## Início rápido

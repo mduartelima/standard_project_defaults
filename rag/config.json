@@ -1,6 +1,6 @@
 {
   "roots": [".ai", "docs", "src", "history.md", "README.md", "CLAUDE.md"],
-  "extensions": [".md", ".txt", ".py", ".ts", ".tsx", ".js", ".jsx", ".c", ".h", ".cpp", ".hpp", ".rs", ".go", ".yaml", ".yml", ".json", ".toml", ".ld", ".dts", ".overlay", ".csv", ".conf"],
+  "extensions": [".md", ".txt", ".py", ".ts", ".tsx", ".js", ".jsx", ".c", ".h", ".cpp", ".hpp", ".rs", ".go", ".yaml", ".yml", ".json", ".toml", ".ld", ".dts", ".overlay", ".csv", ".conf", ".proto"],
   "include_files": ["sdkconfig", "sdkconfig.defaults"],
   "exclude_dirs": [".git", "node_modules", "build", "dist", ".venv", "__pycache__", ".pio", "managed_components"],
   "exclude_files": ["_TEMPLATE.md", "package-lock.json"],
