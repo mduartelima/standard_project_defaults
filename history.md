@@ -26,6 +26,25 @@ MODELO DE ENTRADA — copiar para o topo da lista
 **Commit:** `<hash curto>` — `<mensagem>`
 -->
 
+## 2026-10-27 — Esclarecimento sobre criação de projeto a partir do template
+
+**Tipo:** documentação
+**Escopo:** docs
+
+**Contexto:** O passo 1 do README misturava o botão "Use this template" com a limpeza do histórico, necessária apenas ao clonar.
+
+**Ações realizadas:**
+- Reescrito o passo 1 do `README.md`: o botão copia os arquivos sem histórico; a remoção de `.git` vale apenas para o clone local.
+- Orientados ao responsável a descrição, os tópicos e a opção "Template repository" do repositório (ação manual no GitHub).
+
+**Resultado:** Texto ajustado. Configurações do GitHub dependem do responsável e não foram verificadas.
+
+**Arquivos afetados:** `README.md`, `history.md`
+
+**Pendências:** Aplicar descrição, tópicos e "Template repository" no GitHub; conferir a renderização do README e dos selos.
+
+**Commit:** `docs: esclarece a criacao do repositorio a partir do template`
+
 ## 2026-10-27 — README como apresentação do template
 
 **Tipo:** documentação

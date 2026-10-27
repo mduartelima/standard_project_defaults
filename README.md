@@ -44,7 +44,7 @@ Detalhes da indexação, do chunking e da evolução prevista (busca híbrida co
 
 ## Como implementar em um novo projeto
 
-1. Criar o repositório a partir do template (botão **Use this template**, quando habilitado) ou clonar:
+1. Criar o repositório a partir do template. Pelo botão **Use this template**, o GitHub copia os arquivos sem o histórico do template, e não há nada a limpar. Para criar localmente, clonar e descartar o histórico:
 
    ```bash
    git clone https://github.com/mduartelima/standard_project_defaults meu-projeto
