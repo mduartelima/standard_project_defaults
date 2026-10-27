@@ -1,0 +1,13 @@
+# Desativado por padrao (somente disparo manual). Para ativar, trocar o gatilho por:
+#   on:
+#     push:
+#       paths: ["src/hardware/**"]
+name: hardware
+on: workflow_dispatch
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: ERC, DRC e exportacao de documentacao
+        run: 'echo "preencher: ERC e DRC do EDA adotado e exportacao de PDFs do esquematico (ver docs/hardware-release.md)"'
