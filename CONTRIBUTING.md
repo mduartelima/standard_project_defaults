@@ -18,6 +18,10 @@ Convenção por camada em `tests/README.md`. Bug corrigido ganha teste de regres
 
 `docs/engineering-guidelines.md`.
 
+## README do projeto derivado
+
+O `README.md` deste repositório apresenta o template. Em projetos derivados, o ponto de partida é `docs/README.project-template.md`.
+
 ## Licença
 
 Contribuições ao template são aceitas sob a licença MIT (`LICENSE`). Em projetos derivados, substituir ou remover o `LICENSE` e definir a licença e o titular do próprio projeto.
