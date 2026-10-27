@@ -26,6 +26,25 @@ MODELO DE ENTRADA — copiar para o topo da lista
 **Commit:** `<hash curto>` — `<mensagem>`
 -->
 
+## 2026-10-27 — Versionamento 0.1.1
+
+**Tipo:** documentação
+**Escopo:** geral
+
+**Contexto:** Preparação da versão 0.1.1 com as mudanças da incorporação seletiva de referência IoT.
+
+**Ações realizadas:**
+- `VERSION` atualizado de `0.1.0` para `0.1.1`.
+- `CHANGELOG.md`: seção `[Não lançado]` convertida em `[0.1.1] - 2026-10-27`, com nova seção `[Não lançado]` vazia.
+
+**Resultado:** Versão preparada na branch `develop`. Tag `v0.1.1` não criada.
+
+**Arquivos afetados:** `VERSION`, `CHANGELOG.md`, `history.md`
+
+**Pendências:** Autorização para criar a tag `v0.1.1` e para push da branch e da tag.
+
+**Commit:** `chore: versiona o template em 0.1.1`
+
 ## 2026-10-27 — Incorporação seletiva de referência de estrutura IoT
 
 **Tipo:** documentação

@@ -4,6 +4,8 @@ Mudanças relevantes por versão, no estilo Keep a Changelog (seções Adicionad
 
 ## [Não lançado]
 
+## [0.1.1] - 2026-10-27
+
 ### Adicionado
 - `src/protocol/` como diretório de schemas do protocolo (formato a definir por projeto) e indexação de `.proto` no RAG.
 - Workflow `hardware.yml` (disparo manual) para ERC/DRC.
