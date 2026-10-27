@@ -29,6 +29,19 @@ Convenção em `tests/README.md`.
 <pastas principais e responsabilidade de cada uma>
 ```
 
+## Divisão opcional
+
+Padrão a adotar quando o projeto precisar; não criar pastas vazias de antemão.
+
+| Pasta | Conteúdo |
+|---|---|
+| `bootloader/` | configuração do bootloader, tabela de partições, referência às chaves públicas |
+| `targets/<alvo>/` | uma aplicação por alvo, quando houver mais de um (bare-metal, RTOS, Linux embarcado) |
+| `ota-tools/` | scripts de assinatura e empacotamento de imagens; **sem chaves privadas** (ver `SECURITY.md`) |
+| `shared/` | drivers e bibliotecas usados por mais de um alvo |
+
+Política de atualização remota: `docs/ota-policy.md`.
+
 ## Dependências e interfaces
 
 - Depende de: <camadas, serviços, bibliotecas>
