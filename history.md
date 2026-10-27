@@ -26,6 +26,32 @@ MODELO DE ENTRADA — copiar para o topo da lista
 **Commit:** `<hash curto>` — `<mensagem>`
 -->
 
+## 2026-10-27 — Correções do RAG, arquivos ausentes e governança do template
+
+**Tipo:** correção
+**Escopo:** geral
+
+**Contexto:** Análise do projeto apontou bugs no RAG, referências a arquivos inexistentes, ausência de governança, de READMEs úteis por camada e de CI. Primeiro commit do repositório (sem commits anteriores).
+
+**Ações realizadas:**
+- Corrigido o filtro `--kind` (aplicado no SQL, antes do `LIMIT`), `search()` passou a lançar `IndexNotFound` e `eval.py` deixou de dividir por zero. Testes de regressão em `tests/rag/`, que falham no código anterior.
+- RAG passou a indexar `.csv`, `.conf`, `sdkconfig` e `sdkconfig.defaults`; peso de `datasheet` elevado para 1.3.
+- Criados `docs/api.md`, `docs/protocol.md`, `docs/datasheets/` e `.env.example`.
+- Criados `.gitattributes` (LF em hooks e scripts) e `.editorconfig`; `.gitignore` deixou de ignorar `*.bin` e `*.hex`.
+- Criados `SECURITY.md`, `CONTRIBUTING.md`, `CODEOWNERS`, `CHANGELOG.md`, `docs/ota-policy.md`, `docs/hardware-release.md`, modelos de README por camada, `tests/README.md` e checklist HIL.
+- Criados workflows `rag.yml` (ativo) e `backend`, `frontend`, `firmware`, `hil` (somente disparo manual); `.tool-versions` como modelo.
+- Hook `commit-msg` exercitado com 14 mensagens (formato, maiúscula, ponto final, comprimento, trailer com e sem `ALLOW_COAUTHOR=1`, assinatura de geração, merge) e em commits reais; comportamento conforme o esperado.
+
+**Resultado:** 5 testes unitários do RAG passando; `rag/eval.py` com 3/3 (100%) em `hit rate@5`; nenhum caminho citado em Markdown inexistente, exceto `rag/index.db` (gerado). Sintaxe dos workflows YAML não validada por parser (sem PyYAML local) nem executada no GitHub.
+
+**Correção factual:** a entrada anterior cita caminhos com prefixo `ai-project-template/` e afirma que o diretório não era repositório git; esses fatos valiam para a pasta de origem. O repositório atual tem a raiz em `standard_project_defaults/`.
+
+**Arquivos afetados:** `rag/*`, `tests/*`, `docs/*`, `src/*/README.md`, `.github/workflows/*`, `.gitignore`, `.gitattributes`, `.editorconfig`, `.tool-versions`, `.env.example`, `SECURITY.md`, `CONTRIBUTING.md`, `CODEOWNERS`, `CHANGELOG.md`
+
+**Pendências:** Reforçar `.claude/settings.json` (negar `git push -f`, `git reset --hard`, leitura de `.env`; liberar `eval.py`), bloqueado por permissão e a aplicar manualmente. Conferir a chave `includeCoAuthoredBy` na documentação atual. `LICENSE` depende de escolha do responsável. Indexação de `.kicad_*` não implementada. `CLAUDE.md` e `ai-project-template-APAGAR/` fora do repositório, na pasta pai. Preencher placeholders de `context.md` e `README.md`.
+
+**Commit:** `cb4ccfa` a `bdcb3f3` — `chore: adiciona estrutura inicial do template` e demais commits da sessão
+
 ## 2026-10-27 — Regra de Co-Authored-By sob solicitação por commit
 
 **Tipo:** documentação

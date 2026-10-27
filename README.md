@@ -34,6 +34,8 @@ history.md              histórico impessoal de ações
 docs/                   arquitetura, RAG, commits, engenharia
 rag/                    indexação e busca local
 src/                    código-fonte por camada
+tests/                  testes por camada
+.github/workflows/      CI por camada
 ```
 
 ## Documentação
@@ -42,4 +44,9 @@ src/                    código-fonte por camada
 - [Arquitetura RAG](docs/rag-architecture.md)
 - [Convenção de commits](docs/commit-convention.md)
 - [Diretrizes de engenharia](docs/engineering-guidelines.md)
+- [API](docs/api.md) e [protocolo](docs/protocol.md)
+- [Política de OTA](docs/ota-policy.md)
+- [Release de hardware](docs/hardware-release.md)
+- [Testes](tests/README.md)
+- [Contribuindo](CONTRIBUTING.md) e [segurança](SECURITY.md)
 - [Histórico](history.md)
