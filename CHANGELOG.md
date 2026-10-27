@@ -4,6 +4,15 @@ Mudanças relevantes por versão, no estilo Keep a Changelog (seções Adicionad
 
 ## [Não lançado]
 
+### Adicionado
+- `src/protocol/` como diretório de schemas do protocolo (formato a definir por projeto) e indexação de `.proto` no RAG.
+- Workflow `hardware.yml` (disparo manual) para ERC/DRC.
+- Divisão opcional do firmware (bootloader, targets, ota-tools, shared) em `src/firmware/README.md`.
+- Análise de referência de estrutura IoT em `.ai/analyses/`.
+
+### Alterado
+- `.gitignore` bloqueia chaves e certificados privados; `SECURITY.md` e `docs/ota-policy.md` definem a custódia de chaves.
+
 ## [0.1.0] - 2026-10-27
 
 ### Adicionado

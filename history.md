@@ -26,6 +26,28 @@ MODELO DE ENTRADA — copiar para o topo da lista
 **Commit:** `<hash curto>` — `<mensagem>`
 -->
 
+## 2026-10-27 — Incorporação seletiva de referência de estrutura IoT
+
+**Tipo:** documentação
+**Escopo:** geral
+
+**Contexto:** Avaliação de um texto de referência (estrutura de monorepo IoT industrial) concluiu que adotá-lo integralmente reorganizaria o template e fixaria stack; 4 pontos foram extraídos.
+
+**Ações realizadas:**
+- Texto guardado, sem emojis, em `.ai/analyses/2026-10-27-referencia-estrutura-iot.md`, com ressalvas (afirmações não verificadas).
+- `.gitignore`: `*.pem`, `*.key`, `*.p12`, `*.pfx`, `*.jks`, `*.keystore`; custódia de chaves em `SECURITY.md` e `docs/ota-policy.md`.
+- Criado `src/protocol/README.md`; referências em `docs/protocol.md`, `docs/architecture.md` e `README.md`; `.proto` adicionado ao RAG.
+- Criado `.github/workflows/hardware.yml` (disparo manual).
+- Seção "Divisão opcional" em `src/firmware/README.md`.
+
+**Resultado:** 6 workflows válidos no PyYAML; 5 testes do RAG passando; `probe.key` e `x.pem` ignorados pelo git; consulta sobre custódia de chave recupera `docs/ota-policy.md`. Execução do `hardware.yml` no GitHub não verificada.
+
+**Arquivos afetados:** `.gitignore`, `SECURITY.md`, `docs/ota-policy.md`, `docs/protocol.md`, `docs/architecture.md`, `README.md`, `rag/config.json`, `src/protocol/README.md`, `src/firmware/README.md`, `.github/workflows/hardware.yml`, `CHANGELOG.md`
+
+**Pendências:** Push da branch `develop` e integração na `main`. O texto original permanece também em `temp.txt` na pasta pai (fora do repositório).
+
+**Commit:** `docs(ai): guarda referencia de estrutura iot` e 4 commits de aplicação
+
 ## 2026-10-27 — Versionamento 0.1.0
 
 **Tipo:** documentação
