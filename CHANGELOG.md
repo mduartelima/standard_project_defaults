@@ -4,6 +4,9 @@ Mudanças relevantes por versão, no estilo Keep a Changelog (seções Adicionad
 
 ## [Não lançado]
 
+### Alterado
+- `README.md` passa a apresentar o template (objetivo, necessidade atendida, vantagens, implementação e uso, com resumo em inglês); o modelo com placeholders foi movido para `docs/README.project-template.md`.
+
 ## [0.1.1] - 2026-10-27
 
 ### Adicionado
