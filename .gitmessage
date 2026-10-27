@@ -1,0 +1,10 @@
+# <tipo>(<escopo>): <descrição imperativa, minúscula, sem ponto>
+#
+# Tipos: feat fix refactor perf docs test build ci chore revert
+# Escopos: backend frontend firmware hardware rag docs ai
+#
+# Corpo: o quê e por quê (não o como). Linhas <= 72 colunas.
+#
+# Rodapé: Refs #123 | Closes #45 | BREAKING CHANGE: <descrição>
+# Proibido: menções a IA, emojis.
+# Co-Authored-By: só se solicitado neste commit (ALLOW_COAUTHOR=1).

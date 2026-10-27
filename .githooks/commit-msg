@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+# Valida mensagens de commit conforme docs/commit-convention.md
+# Ativar: git config core.hooksPath .githooks
+set -euo pipefail
+MSG_FILE="$1"
+HEADER=$(grep -v '^#' "$MSG_FILE" | sed '/^\s*$/d' | head -n1)
+
+# Permite merges e reverts automáticos do git
+if [[ "$HEADER" =~ ^(Merge|Revert\ \") ]]; then exit 0; fi
+
+PATTERN='^(feat|fix|refactor|perf|docs|test|build|ci|chore|revert)(\([a-z0-9/_-]+\))?!?: [^A-Z].{0,70}[^.]$'
+if ! [[ "$HEADER" =~ $PATTERN ]]; then
+  echo "✗ Cabeçalho fora do padrão: \"$HEADER\"" >&2
+  echo "  Esperado: <tipo>(<escopo>): <descrição minúscula, imperativa, sem ponto, ≤72>" >&2
+  echo "  Tipos: feat fix refactor perf docs test build ci chore revert" >&2
+  exit 1
+fi
+
+if [ ${#HEADER} -gt 72 ]; then
+  echo "✗ Cabeçalho com ${#HEADER} caracteres (máx. 72)." >&2; exit 1
+fi
+
+if grep -qiE '^co-authored-by:' "$MSG_FILE" && [ "${ALLOW_COAUTHOR:-}" != "1" ]; then
+  echo "✗ 'Co-Authored-By' só é permitido quando solicitado no commit (ALLOW_COAUTHOR=1)." >&2; exit 1
+fi
+
+# Bloqueia assinaturas automáticas de ferramentas de IA (não bloqueia o tema IA em si)
+if grep -v '^#' "$MSG_FILE" | grep -qiE '(generated (with|by) |gerado (com|por|pelo|pela) |🤖)'; then
+  echo "✗ Assinatura de ferramenta de geração detectada. Remova-a." >&2; exit 1
+fi
+exit 0

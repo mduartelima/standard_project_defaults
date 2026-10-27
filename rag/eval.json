@@ -1,0 +1,5 @@
+[
+  {"question": "por que a memória fica versionada no repositório?", "expected_path": ".ai/memory/decisions.md"},
+  {"question": "formato da mensagem de commit", "expected_path": "docs/commit-convention.md"},
+  {"question": "regras para ISR no firmware", "expected_path": "docs/engineering-guidelines.md"}
+]

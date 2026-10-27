@@ -1,0 +1,21 @@
+{
+  "roots": [".ai", "docs", "src", "history.md", "README.md", "CLAUDE.md"],
+  "extensions": [".md", ".txt", ".py", ".ts", ".tsx", ".js", ".jsx", ".c", ".h", ".cpp", ".hpp", ".rs", ".go", ".yaml", ".yml", ".json", ".toml", ".ld", ".dts", ".overlay"],
+  "exclude_dirs": [".git", "node_modules", "build", "dist", ".venv", "__pycache__", ".pio", "managed_components"],
+  "exclude_files": ["_TEMPLATE.md", "package-lock.json"],
+  "max_file_kb": 512,
+  "chunk_chars": 1500,
+  "code_window_lines": 60,
+  "code_overlap_lines": 10,
+  "kind_boost": {
+    "decision": 1.5,
+    "memory": 1.4,
+    "history": 1.2,
+    "analysis": 1.2,
+    "result": 1.1,
+    "doc": 1.0,
+    "datasheet": 1.0,
+    "code": 1.0,
+    "chat": 0.8
+  }
+}

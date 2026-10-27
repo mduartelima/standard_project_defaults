@@ -1,0 +1,38 @@
+# RAG
+rag/index.db
+
+# Segredos e ambiente
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+.venv/
+*.pyc
+
+# Node
+node_modules/
+dist/
+
+# Firmware / build
+build/
+.pio/
+*.elf
+*.bin
+*.hex
+*.map
+
+# Hardware (backups do KiCad)
+*-backups/
+*.kicad_prl
+fp-info-cache
+
+# IDE / SO
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+
+# Claude Code: configurações pessoais (as do projeto ficam versionadas)
+.claude/settings.local.json
