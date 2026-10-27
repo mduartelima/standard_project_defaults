@@ -119,7 +119,9 @@ def iter_files():
                 continue
             if any(part in CONFIG["exclude_dirs"] for part in f.relative_to(ROOT).parts):
                 continue
-            if f.name in CONFIG["exclude_files"] or f.suffix.lower() not in CONFIG["extensions"]:
+            if f.name in CONFIG["exclude_files"]:
+                continue
+            if f.suffix.lower() not in CONFIG["extensions"] and f.name not in CONFIG.get("include_files", []):
                 continue
             if f.stat().st_size > CONFIG["max_file_kb"] * 1024:
                 continue
