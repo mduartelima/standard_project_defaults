@@ -11,7 +11,7 @@
 - Último marco concluído: Correções do RAG, arquivos ausentes, governança, modelos por camada e CI (2026-10-27).
 
 ## Prioridades (ordem)
-1. Aplicar manualmente o reforço de `.claude/settings.json`.
+1. Publicar o repositório: criar o remoto no GitHub e `git push -u origin main`.
 2. Preencher objetivo, stack e READMEs de camada com dados do projeto real.
 3. Decidir a licença (`LICENSE`).
 
@@ -19,7 +19,7 @@
 - <tarefa> — <status>
 
 ## Bloqueios e riscos
-- Agente sem permissão para editar `.claude/settings.json` — `deny` continua curto — alteração manual do responsável.
+- `origin` aponta para repositório inexistente (`upstream is gone`) — commits sem backup remoto — criar o remoto e enviar.
 - Workflows YAML nunca executados no GitHub — sintaxe não confirmada — validar no primeiro push.
 
 ## Restrições técnicas

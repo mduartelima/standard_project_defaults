@@ -26,6 +26,26 @@ MODELO DE ENTRADA — copiar para o topo da lista
 **Commit:** `<hash curto>` — `<mensagem>`
 -->
 
+## 2026-10-27 — Reforço das permissões em settings.json
+
+**Tipo:** infraestrutura
+**Escopo:** geral
+
+**Contexto:** Pendência da entrada anterior: a edição de `.claude/settings.json` foi bloqueada para o agente e aplicada manualmente pelo responsável.
+
+**Ações realizadas:**
+- Adicionados ao `deny`: `git push -f`, `git reset --hard`, leitura de `.env` e `.env.*`.
+- Adicionado ao `allow`: `rag/eval.py`.
+- Diff revisado e JSON validado.
+
+**Resultado:** Arquivo com sintaxe válida. Efeito das regras não exercitado em sessão nova.
+
+**Arquivos afetados:** `.claude/settings.json`, `history.md`, `.ai/memory/context.md`
+
+**Pendências:** Nenhuma nova.
+
+**Commit:** `chore(ai): reforca permissoes do agente em settings.json`
+
 ## 2026-10-27 — Correções do RAG, arquivos ausentes e governança do template
 
 **Tipo:** correção
@@ -48,7 +68,7 @@ MODELO DE ENTRADA — copiar para o topo da lista
 
 **Arquivos afetados:** `rag/*`, `tests/*`, `docs/*`, `src/*/README.md`, `.github/workflows/*`, `.gitignore`, `.gitattributes`, `.editorconfig`, `.tool-versions`, `.env.example`, `SECURITY.md`, `CONTRIBUTING.md`, `CODEOWNERS`, `CHANGELOG.md`
 
-**Pendências:** Reforçar `.claude/settings.json` (negar `git push -f`, `git reset --hard`, leitura de `.env`; liberar `eval.py`), bloqueado por permissão e a aplicar manualmente. Conferir a chave `includeCoAuthoredBy` na documentação atual. `LICENSE` depende de escolha do responsável. Indexação de `.kicad_*` não implementada. `CLAUDE.md` e `ai-project-template-APAGAR/` fora do repositório, na pasta pai. Preencher placeholders de `context.md` e `README.md`.
+**Pendências:** Conferir a chave `includeCoAuthoredBy` na documentação atual. `LICENSE` depende de escolha do responsável. Indexação de `.kicad_*` não implementada. `CLAUDE.md` e `ai-project-template-APAGAR/` fora do repositório, na pasta pai. Preencher placeholders de `context.md` e `README.md`.
 
 **Commit:** `cb4ccfa` a `bdcb3f3` — `chore: adiciona estrutura inicial do template` e demais commits da sessão
 
