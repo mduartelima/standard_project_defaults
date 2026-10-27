@@ -9,7 +9,8 @@
 | Bootloader / modo de swap | <preencher> |
 | Layout de partições (slots, trailer) | <preencher> |
 | Política de versão (anti-rollback) | <preencher> |
-| Assinatura de imagens | <algoritmo, onde fica a chave> |
+| Assinatura de imagens | <algoritmo> |
+| Custódia da chave privada | <cofre de segredos ou HSM; nunca no repositório> |
 | Confirmação da imagem | <após quais autotestes a aplicação confirma> |
 | Rollback | <comportamento sem confirmação> |
 | Rotação de chaves | <plano> |

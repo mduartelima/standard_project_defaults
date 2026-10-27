@@ -6,6 +6,14 @@ rag/index.db
 .env.*
 !.env.example
 
+# Chaves e certificados privados (assinatura de firmware, TLS)
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+*.keystore
+
 # Python
 __pycache__/
 .venv/
