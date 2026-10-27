@@ -8,11 +8,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Build do firmware e testes de host
-        run: echo "preencher: build e testes de host de src/firmware"
+        run: 'echo "preencher: build e testes de host de src/firmware"'
   hil:
     needs: build
     runs-on: [self-hosted, "<label-da-bancada>"]
     steps:
       - uses: actions/checkout@v4
       - name: Flash, boot, estimulo e asserções
-        run: echo "preencher: aprovar somente com build, flash, boot, estimulo e asserções ok"
+        run: 'echo "preencher: aprovar somente com build, flash, boot, estimulo e asserções ok"'

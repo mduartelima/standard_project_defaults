@@ -1,9 +1,9 @@
 name: rag
 on:
   push:
-    paths: ["rag/**", "tests/rag/**", ".github/workflows/rag.yml"]
+    branches: [main]
   pull_request:
-    paths: ["rag/**", "tests/rag/**", ".github/workflows/rag.yml"]
+  workflow_dispatch:
 jobs:
   test:
     runs-on: ubuntu-latest

@@ -10,4 +10,4 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Build e teste
-        run: echo "preencher: comandos de build e teste de src/backend (ver src/backend/README.md)"
+        run: 'echo "preencher: comandos de build e teste de src/backend (ver src/backend/README.md)"'
