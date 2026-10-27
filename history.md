@@ -26,6 +26,25 @@ MODELO DE ENTRADA — copiar para o topo da lista
 **Commit:** `<hash curto>` — `<mensagem>`
 -->
 
+## 2026-10-27 — Versionamento 0.1.0
+
+**Tipo:** documentação
+**Escopo:** geral
+
+**Contexto:** Pedido para versionar o projeto. Adotado versionamento semântico em 0.1.0 (pré-1.0: template em evolução).
+
+**Ações realizadas:**
+- Criado `VERSION` com `0.1.0`.
+- `CHANGELOG.md`: seção `[Não lançado]` convertida em `[0.1.0] - 2026-10-27`, com nova seção `[Não lançado]` vazia.
+
+**Resultado:** Tag anotada `v0.1.0` criada localmente sobre o commit desta entrada.
+
+**Arquivos afetados:** `VERSION`, `CHANGELOG.md`, `history.md`
+
+**Pendências:** Autorização para push dos 7 commits e da tag `v0.1.0`.
+
+**Commit:** `chore: versiona o template em 0.1.0`
+
 ## 2026-10-27 — Regra de confirmação para commit e push
 
 **Tipo:** documentação
