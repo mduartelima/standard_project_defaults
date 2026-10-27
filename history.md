@@ -26,6 +26,26 @@ MODELO DE ENTRADA — copiar para o topo da lista
 **Commit:** `<hash curto>` — `<mensagem>`
 -->
 
+## 2026-10-27 — Licença MIT e migração da chave de atribuição
+
+**Tipo:** documentação
+**Escopo:** geral
+
+**Contexto:** Pendências de licença e de atribuição (`includeCoAuthoredBy` deprecada desde a v2.0.62, conforme a referência oficial de configurações do Claude Code).
+
+**Ações realizadas:**
+- Adicionado `LICENSE` (MIT, titular Marcelo Duarte Lima) e avisos de substituição em `README.md` e `CONTRIBUTING.md`; seção de autoria no `README.md`.
+- Removida a chave `includeCoAuthoredBy` de `.claude/settings.json`; mantido `attribution` com `commit` e `pr` vazios.
+- Remoto `origin` verificado: `origin/main` em `90af7c3` antes dos commits desta entrada.
+
+**Resultado:** JSON de `settings.json` válido. Versão local da extensão (2.1.311) acima da mínima da forma `"attribution": false` (2.1.281); mantida a forma com strings vazias por compatibilidade.
+
+**Arquivos afetados:** `LICENSE`, `README.md`, `CONTRIBUTING.md`, `CHANGELOG.md`, `.claude/settings.json`
+
+**Pendências:** Push dos commits novos. Ampliar `deny` com variações (`rm -fr`, `Remove-Item -Recurse`) é opcional.
+
+**Commit:** `b896737`, `8d59c1d`
+
 ## 2026-10-27 — Reforço das permissões em settings.json
 
 **Tipo:** infraestrutura
