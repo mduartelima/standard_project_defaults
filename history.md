@@ -26,6 +26,25 @@ MODELO DE ENTRADA — copiar para o topo da lista
 **Commit:** `<hash curto>` — `<mensagem>`
 -->
 
+## 2026-10-27 — Regra de confirmação para commit e push
+
+**Tipo:** documentação
+**Escopo:** geral
+
+**Contexto:** O responsável definiu que o agente deve perguntar sobre commit e push separadamente e nunca executar push automaticamente.
+
+**Ações realizadas:**
+- Registrada a decisão D-004 em `.ai/memory/decisions.md`.
+- Acrescentada a regra na seção 4 de `CLAUDE.md`.
+
+**Resultado:** Regra vigente a partir desta entrada.
+
+**Arquivos afetados:** `CLAUDE.md`, `.ai/memory/decisions.md`, `history.md`
+
+**Pendências:** Autorização para push dos 6 commits locais.
+
+**Commit:** `docs(ai): registra regra de confirmacao para commit e push (D-004)`
+
 ## 2026-10-27 — Correção dos workflows de CI
 
 **Tipo:** correção

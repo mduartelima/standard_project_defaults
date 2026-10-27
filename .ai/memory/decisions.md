@@ -35,3 +35,12 @@ Append-only. Decisão revogada não é apagada: muda o status para `Substituída
 - **Decisão:** Proibido de forma automática. Permitido somente quando o usuário solicitar para aquele commit; o pedido não vale para commits seguintes. O hook `.githooks/commit-msg` aceita o trailer apenas com `ALLOW_COAUTHOR=1` no ambiente do commit. Menções a IA fora desse trailer, assinaturas de geração e emojis seguem bloqueadas.
 - **Alternativas consideradas:** exceção só textual, com o hook bloqueando sempre — a regra ficaria impossível de cumprir sem editar o hook; marcador na mensagem — exige o hook remover o marcador e altera a mensagem gravada.
 - **Consequências:** Atribuição passa a ser decisão explícita por commit. A proibição absoluta anterior, que constava apenas em `CLAUDE.md`, `commit-convention.md`, `.gitmessage` e no hook, deixa de valer.
+
+## D-004 — Commit e push sempre sob confirmação, separadamente
+- **Data:** 2026-10-27
+- **Status:** Aceita
+- **Contexto:** Commits e pushes feitos pelo agente a partir de pedidos genéricos ("executar as recomendações") publicaram conteúdo e dispararam CI sem confirmação específica.
+- **Decisão:** O agente sempre pergunta antes de `git commit` e, em pergunta separada, antes de `git push`. A autorização de um não vale para o outro nem para ocorrências seguintes. O agente nunca executa push de forma automática.
+- **Alternativas consideradas:** autorização geral por sessão — o escopo do que é publicado deixa de ser revisado; apenas bloquear push — o histórico local passaria a crescer sem revisão.
+- **Consequências:** Mais interações por tarefa; o responsável controla o que entra no histórico e o que é publicado. O ciclo em `CLAUDE.md` passa a ter confirmação explícita na etapa Commitar.
+

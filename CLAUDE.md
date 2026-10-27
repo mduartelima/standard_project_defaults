@@ -51,6 +51,7 @@ Ver `docs/commit-convention.md`. Resumo:
 
 - Proibido: menções a IA/assistente e emojis.
 - `Co-Authored-By`: nunca automático. Só é adicionado quando o usuário solicitar deliberadamente, a cada commit (o pedido não vale para o commit seguinte). O hook só aceita o trailer com `ALLOW_COAUTHOR=1` (D-003).
+- **Commit e push são sempre perguntados, separadamente.** O agente pede autorização antes de cada `git commit` e antes de cada `git push`; uma autorização não cobre a outra nem vale para a vez seguinte. Push nunca é executado automaticamente (D-004).
 - Commitar apenas quando a mudança for relevante e validada. Não commitar arquivos gerados (`rag/index.db`, builds).
 - Hook `.githooks/commit-msg` valida o formato. Ativar com `git config core.hooksPath .githooks`.
 
