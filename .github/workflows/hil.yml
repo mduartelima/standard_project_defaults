@@ -1,0 +1,18 @@
+# Desativado por padrao. Requer runner self-hosted com a label da bancada
+# (ver tests/firmware/hil/README.md). Build em runner de nuvem, flash e teste na bancada.
+name: hil
+on: workflow_dispatch
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build do firmware e testes de host
+        run: echo "preencher: build e testes de host de src/firmware"
+  hil:
+    needs: build
+    runs-on: [self-hosted, "<label-da-bancada>"]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Flash, boot, estimulo e asserções
+        run: echo "preencher: aprovar somente com build, flash, boot, estimulo e asserções ok"

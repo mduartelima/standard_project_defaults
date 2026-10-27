@@ -1,0 +1,13 @@
+# Desativado por padrao (somente disparo manual). Para ativar, trocar o gatilho por:
+#   on:
+#     push:
+#       paths: ["src/backend/**", "tests/backend/**"]
+name: backend
+on: workflow_dispatch
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build e teste
+        run: echo "preencher: comandos de build e teste de src/backend (ver src/backend/README.md)"
