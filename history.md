@@ -26,6 +26,25 @@ MODELO DE ENTRADA — copiar para o topo da lista
 **Commit:** `<hash curto>` — `<mensagem>`
 -->
 
+## 2026-11-04 — Versionamento 0.1.2
+
+**Tipo:** documentação
+**Escopo:** geral
+
+**Contexto:** Preparação da versão 0.1.2 com a reescrita do README e o modelo para projetos derivados.
+
+**Ações realizadas:**
+- `VERSION` atualizado de `0.1.1` para `0.1.2`.
+- `CHANGELOG.md`: seção `[Não lançado]` convertida em `[0.1.2] - 2026-10-27`, com nova seção `[Não lançado]` vazia.
+
+**Resultado:** Tag anotada `v0.1.2` criada sobre o commit desta entrada e integrada na `main` por fast-forward.
+
+**Arquivos afetados:** `VERSION`, `CHANGELOG.md`, `history.md`
+
+**Pendências:** Criação da Release `v0.1.2` no GitHub (manual, `gh` ausente).
+
+**Commit:** `chore: versiona o template em 0.1.2`
+
 ## 2026-10-27 — Esclarecimento sobre criação de projeto a partir do template
 
 **Tipo:** documentação

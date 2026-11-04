@@ -4,8 +4,15 @@ Mudanças relevantes por versão, no estilo Keep a Changelog (seções Adicionad
 
 ## [Não lançado]
 
+## [0.1.2] - 2026-11-04
+
+### Adicionado
+- `docs/README.project-template.md`: modelo de README com placeholders para projetos derivados.
+- Aviso em `CONTRIBUTING.md` sobre o README de projetos derivados.
+
 ### Alterado
-- `README.md` passa a apresentar o template (objetivo, necessidade atendida, vantagens, implementação e uso, com resumo em inglês); o modelo com placeholders foi movido para `docs/README.project-template.md`.
+- `README.md` passa a apresentar o template (objetivo, necessidade atendida, vantagens, implementação e uso, com resumo em inglês).
+- Passo 1 do README esclarece que o botão "Use this template" copia os arquivos sem histórico; a remoção de `.git` vale só para o clone local.
 
 ## [0.1.1] - 2026-10-27
 
