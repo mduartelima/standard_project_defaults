@@ -4,6 +4,11 @@ Mudanças relevantes por versão, no estilo Keep a Changelog (seções Adicionad
 
 ## [Não lançado]
 
+### Alterado
+- `AGENTS.md` passa a ser a fonte canônica das regras dos agentes de IA, independente de fornecedor e modelo; `CLAUDE.md` vira ponte que importa `AGENTS.md` (D-005).
+- Guias, prompts e README apontam para `AGENTS.md`; o RAG indexa `AGENTS.md`.
+- Glossário com os termos agente de IA, ferramenta de agente e modelo.
+
 ## [0.1.2] - 2026-11-04
 
 ### Adicionado

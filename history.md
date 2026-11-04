@@ -26,6 +26,26 @@ MODELO DE ENTRADA — copiar para o topo da lista
 **Commit:** `<hash curto>` — `<mensagem>`
 -->
 
+## 2026-11-04 — AGENTS.md como fonte canônica das regras dos agentes
+
+**Tipo:** documentação
+**Escopo:** geral
+
+**Contexto:** As regras dos agentes ficavam em `CLAUDE.md`, vinculando o template a um fornecedor. Proposta de termo geral ("agentes de IA", com "ferramenta de agente" e "modelo") e de `AGENTS.md` canônico; a mudança descrita por outra ferramenta não existia neste repositório e foi aplicada aqui.
+
+**Ações realizadas:**
+- `AGENTS.md` passou a conter as regras e a terminologia; `CLAUDE.md` virou ponte com import `@AGENTS.md` (método recomendado na documentação do Claude Code; link simbólico descartado por limitação no Windows).
+- Referências ativas atualizadas em `README.md`, `docs/README.project-template.md`, `CONTRIBUTING.md`, `docs/rag-architecture.md` e nos prompts `session-start` e `analyze`; `rag/config.json` passou a indexar `AGENTS.md`.
+- Registrada a decisão D-005 e três termos no glossário; `CHANGELOG.md` atualizado.
+
+**Resultado:** `AGENTS.md` é o primeiro resultado de consulta sobre o ciclo de trabalho; `rag/eval.py` com hit rate@5 de 3/3; 5 testes do RAG passando; sem caminhos citados inexistentes (exceto `rag/index.db`, gerado). Carregamento do import na extensão do VS Code não verificado.
+
+**Arquivos afetados:** `AGENTS.md`, `CLAUDE.md`, `README.md`, `docs/README.project-template.md`, `CONTRIBUTING.md`, `docs/rag-architecture.md`, `.ai/prompts/session-start.md`, `.ai/prompts/analyze.md`, `rag/config.json`, `.ai/memory/glossary.md`, `.ai/memory/decisions.md`, `CHANGELOG.md`, `history.md`
+
+**Pendências:** Em sessão nova, conferir com `/memory` que `AGENTS.md` é carregado pela ponte (CLI e extensão do VS Code); se não for, manter as regras também em `CLAUDE.md` e registrar em D-005. Integração na `main` (não solicitada nesta etapa).
+
+**Commit:** `docs(ai): torna agents.md a fonte canonica das regras dos agentes`, `docs: aponta guias e prompts para agents.md e registra a decisao d-005` e `docs(ai): registra neutralidade de fornecedor em history e changelog`
+
 ## 2026-11-04 — Versionamento 0.1.2
 
 **Tipo:** documentação
