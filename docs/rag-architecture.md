@@ -29,7 +29,7 @@ Permitir que agentes de IA recuperem conhecimento do projeto (memória, decisõe
 
 | Nível | Conteúdo | Como chega ao modelo |
 |---|---|---|
-| 0 — Regras | `CLAUDE.md` | Sempre no contexto (carregado automaticamente) |
+| 0 — Regras | `AGENTS.md` (`CLAUDE.md` como ponte) | Sempre no contexto (carregado automaticamente) |
 | 1 — Memória de trabalho | `.ai/memory/context.md`, últimas entradas de `history.md` | Lido no início da sessão |
 | 2 — Memória de longo prazo | `decisions.md`, `.ai/analyses/`, `.ai/chats/`, `.ai/results/`, `docs/` | Recuperado via RAG |
 | 3 — Conhecimento técnico | código-fonte, datasheets, manuais de referência | Recuperado via RAG |

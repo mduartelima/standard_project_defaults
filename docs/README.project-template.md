@@ -27,7 +27,7 @@ python rag/query.py "como funciona X?"
 ## Estrutura
 
 ```
-CLAUDE.md / AGENTS.md   regras para agentes de IA
+AGENTS.md / CLAUDE.md   regras para agentes de IA (CLAUDE.md é ponte)
 history.md              histórico impessoal de ações
 .ai/memory/             contexto vivo, decisões, glossário
 .ai/chats/              resumos de sessões

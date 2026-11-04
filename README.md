@@ -22,7 +22,7 @@ Fornecer, desde o primeiro commit, um conjunto único de regras, pastas e automa
 ## Vantagens
 
 - **Contexto auditável:** a memória do agente vive no git, com histórico, revisão e diff, e não em um serviço externo.
-- **Portável entre ferramentas:** `CLAUDE.md` para Claude Code e `AGENTS.md` para Codex, Cursor, Copilot e outros agentes.
+- **Portável entre ferramentas e modelos:** as regras ficam em `AGENTS.md`, lido por Codex, Cursor, Copilot e outros agentes; `CLAUDE.md` é uma ponte que importa o `AGENTS.md` para o Claude Code.
 - **RAG sem infraestrutura:** apenas a biblioteca padrão do Python e o SQLite; sem servidor, sem chave de API, funciona offline.
 - **Commits consistentes:** formato Conventional Commits, linguagem técnica e impessoal, `Co-Authored-By` bloqueado por padrão e commit e push sempre confirmados pelo responsável.
 - **Decisões rastreáveis:** registro append-only; decisão revogada recebe o status `Substituída por D-XXX`.
@@ -31,11 +31,11 @@ Fornecer, desde o primeiro commit, um conjunto único de regras, pastas e automa
 
 ## Como funciona
 
-Toda tarefa segue o ciclo **Analisar → Levantar → Implementar → Validar → Documentar → Commitar**, descrito em `CLAUDE.md`. O agente lê a memória no início da sessão e recupera o restante sob demanda.
+Toda tarefa segue o ciclo **Analisar → Levantar → Implementar → Validar → Documentar → Commitar**, descrito em `AGENTS.md`. O agente lê a memória no início da sessão e recupera o restante sob demanda.
 
 | Nível | Conteúdo | Como chega ao agente |
 |---|---|---|
-| 0 — Regras | `CLAUDE.md`, `AGENTS.md` | Carregado automaticamente |
+| 0 — Regras | `AGENTS.md` (e `CLAUDE.md`, ponte) | Carregado automaticamente |
 | 1 — Memória de trabalho | `.ai/memory/context.md`, últimas entradas de `history.md` | Lido no início da sessão |
 | 2 — Memória de longo prazo | `decisions.md`, `.ai/analyses/`, `.ai/chats/`, `.ai/results/`, `docs/` | Busca RAG |
 | 3 — Conhecimento técnico | Código-fonte e datasheets convertidos para texto | Busca RAG |
@@ -87,7 +87,7 @@ Detalhes da indexação, do chunking e da evolução prevista (busca híbrida co
 ## Estrutura do repositório
 
 ```text
-CLAUDE.md / AGENTS.md   regras para agentes de IA
+AGENTS.md / CLAUDE.md   regras para agentes de IA (CLAUDE.md é ponte)
 history.md              histórico impessoal de ações
 .ai/memory/             contexto vivo, decisões, glossário
 .ai/chats/              resumos de sessões
@@ -119,11 +119,11 @@ tests/                  testes por camada
 
 - Python 3 (somente a biblioteca padrão, com SQLite com FTS5).
 - Git. No Windows, o hook `commit-msg` é executado pelo Git Bash.
-- Um agente de IA que leia `CLAUDE.md` (Claude Code) ou `AGENTS.md` (Codex, Cursor, Copilot e similares).
+- Um agente de IA que leia `AGENTS.md` (Codex, Cursor, Copilot e similares) ou `CLAUDE.md` (Claude Code, que importa o `AGENTS.md`).
 
 ## English summary
 
-AI agent project template with **local project memory**, an offline **RAG** (SQLite FTS5 and BM25, Python standard library only), an impersonal action history (`history.md`), **Conventional Commits** enforced by a git hook, and stack-agnostic layouts for backend, frontend, firmware, hardware and the protocol between them. Works with Claude Code (`CLAUDE.md`) and agents that read `AGENTS.md`. To use it, clone the template, copy `docs/README.project-template.md` over `README.md`, replace the MIT `LICENSE`, enable the hooks and run `python rag/ingest.py`.
+AI agent project template with **local project memory**, an offline **RAG** (SQLite FTS5 and BM25, Python standard library only), an impersonal action history (`history.md`), **Conventional Commits** enforced by a git hook, and stack-agnostic layouts for backend, frontend, firmware, hardware and the protocol between them. Rules live in the vendor-neutral `AGENTS.md`; `CLAUDE.md` is a thin bridge that imports it for Claude Code. To use it, clone the template, copy `docs/README.project-template.md` over `README.md`, replace the MIT `LICENSE`, enable the hooks and run `python rag/ingest.py`.
 
 **Keywords:** AI agent project template, Claude Code, AGENTS.md, CLAUDE.md, local memory for LLM agents, RAG, SQLite FTS5, BM25, Conventional Commits, commit-msg hook, monorepo, firmware, embedded, IoT, OTA, prompt library.
 

@@ -44,3 +44,11 @@ Append-only. Decisão revogada não é apagada: muda o status para `Substituída
 - **Alternativas consideradas:** autorização geral por sessão — o escopo do que é publicado deixa de ser revisado; apenas bloquear push — o histórico local passaria a crescer sem revisão.
 - **Consequências:** Mais interações por tarefa; o responsável controla o que entra no histórico e o que é publicado. O ciclo em `CLAUDE.md` passa a ter confirmação explícita na etapa Commitar.
 
+## D-005 — AGENTS.md como fonte canônica das regras; CLAUDE.md como ponte
+- **Data:** 2026-11-04
+- **Status:** Aceita
+- **Contexto:** As regras dos agentes ficavam em `CLAUDE.md` e `AGENTS.md` apenas apontava para ele, vinculando o projeto a um fornecedor, embora qualquer ferramenta de agente e qualquer modelo possam ser usados.
+- **Decisão:** `AGENTS.md` passa a conter as regras e a terminologia (agente de IA, ferramenta de agente, modelo). `CLAUDE.md` vira ponte de compatibilidade com a linha `@AGENTS.md`, que o Claude Code importa no início da sessão. Referências ativas em guias e prompts passam a `AGENTS.md`; registros históricos (D-001 a D-004, `history.md`, análises e chats) não são reescritos.
+- **Alternativas consideradas:** manter `CLAUDE.md` canônico — preserva o vínculo com um fornecedor; duplicar as regras nos dois arquivos — risco de divergência; link simbólico — no Windows exige privilégio e o Git o baixa como texto; só `AGENTS.md`, sem `CLAUDE.md` — leitura nativa exige Claude Code v2.1.277 ou superior e versões antigas ignorariam as regras em silêncio.
+- **Consequências:** Regras independentes de fornecedor e modelo. Onde D-001 a D-004 citam `CLAUDE.md`, leia-se `AGENTS.md`. O import na extensão do VS Code não consta na documentação consultada e deve ser verificado com `/memory`.
+

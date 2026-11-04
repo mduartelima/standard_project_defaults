@@ -1,5 +1,5 @@
 <contexto>
-Projeto: ver `CLAUDE.md` e `.ai/memory/context.md`.
+Projeto: ver `AGENTS.md` e `.ai/memory/context.md`.
 Motivação da análise: {{por_que_esta_analise_importa}}
 </contexto>
 

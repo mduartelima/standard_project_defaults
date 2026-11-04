@@ -2,7 +2,7 @@
 
 ## Fluxo
 
-1. Ler `CLAUDE.md` (regras de trabalho) e `.ai/memory/context.md` (estado atual).
+1. Ler `AGENTS.md` (regras de trabalho) e `.ai/memory/context.md` (estado atual).
 2. Ativar os hooks: `git config core.hooksPath .githooks` e `git config commit.template .gitmessage`.
 3. Um objetivo por branch e por commit.
 4. Seguir `docs/commit-convention.md` (o hook `commit-msg` valida o cabeçalho).

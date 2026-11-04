@@ -1,4 +1,4 @@
-Leia, nesta ordem: `CLAUDE.md`, `.ai/memory/context.md`, as 5 entradas mais recentes de `history.md` e `.ai/memory/decisions.md`.
+Leia, nesta ordem: `AGENTS.md`, `.ai/memory/context.md`, as 5 entradas mais recentes de `history.md` e `.ai/memory/decisions.md`.
 
 <tarefa>
 Apresente em até 10 linhas:
