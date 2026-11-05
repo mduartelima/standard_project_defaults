@@ -26,6 +26,26 @@ MODELO DE ENTRADA — copiar para o topo da lista
 **Commit:** `<hash curto>` — `<mensagem>`
 -->
 
+## 2026-11-04 — Versionamento 0.1.3
+
+**Tipo:** documentação
+**Escopo:** geral
+
+**Contexto:** Preparação da versão 0.1.3 com `AGENTS.md` como fonte canônica das regras dos agentes de IA (D-005).
+
+**Ações realizadas:**
+- `VERSION` atualizado de `0.1.2` para `0.1.3`.
+- `CHANGELOG.md`: seção `[Não lançado]` convertida em `[0.1.3] - 2026-11-04`, com nova seção `[Não lançado]` vazia.
+- Criada a tag anotada `v0.1.3` e integrada a `main` por fast-forward; enviados `develop`, `main` e a tag.
+
+**Resultado:** Versão publicada em `develop` e `main`. Carregamento do import `@AGENTS.md` na extensão do VS Code ainda não verificado.
+
+**Arquivos afetados:** `VERSION`, `CHANGELOG.md`, `history.md`
+
+**Pendências:** Criar a Release `v0.1.3` no GitHub (manual, `gh` ausente). Conferir com `/memory` o carregamento de `AGENTS.md` pela ponte.
+
+**Commit:** `chore: versiona o template em 0.1.3`
+
 ## 2026-11-04 — AGENTS.md como fonte canônica das regras dos agentes
 
 **Tipo:** documentação
