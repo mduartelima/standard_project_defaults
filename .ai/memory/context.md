@@ -1,17 +1,17 @@
 # Contexto Atual
 
 > Fonte da verdade sobre o **estado presente**. Reescrever a cada sessão relevante; não acumular histórico (isso é papel do `history.md`).
-> Última atualização: 2026-10-27
+> Última atualização: 2026-11-04
 
 ## Objetivo do projeto
 <O que o projeto entrega, em 2–3 frases.>
 
 ## Estado atual
 - Fase: <descoberta | prototipagem | desenvolvimento | validação | produção>
-- Último marco concluído: Publicação da versão 0.1.1 (2026-10-27).
+- Último marco concluído: Versão 0.1.3 publicada (tag, Release e `main`), com `AGENTS.md` como fonte canônica das regras (2026-11-04).
 
 ## Prioridades (ordem)
-1. Versão 0.1.1 publicada (tags e Releases). Próximas mudanças seguem em `develop`.
+1. Próximas mudanças seguem em `develop`; versões publicadas: 0.1.0 a 0.1.3.
 2. Manter o template agnóstico: placeholders são intencionais e preenchidos em cada projeto derivado.
 
 ## Em andamento
@@ -24,4 +24,5 @@
 - <ex.: MCU com 256 KB RAM; latência < 50 ms; operação offline>
 
 ## Próximos passos
+- Verificar o import `@AGENTS.md` no CLI, se utilizado (no VS Code já confirmado).
 - Avaliar indexação de `.kicad_*` no RAG.

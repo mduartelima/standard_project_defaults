@@ -26,6 +26,26 @@ MODELO DE ENTRADA — copiar para o topo da lista
 **Commit:** `<hash curto>` — `<mensagem>`
 -->
 
+## 2026-11-04 — Release 0.1.3 publicada e import do AGENTS.md verificado
+
+**Tipo:** documentação
+**Escopo:** geral
+
+**Contexto:** Fechamento das pendências da versão 0.1.3: Release no GitHub e verificação do carregamento de `AGENTS.md` pela ponte `CLAUDE.md`.
+
+**Ações realizadas:**
+- Publicada pelo responsável a Release `v0.1.3` (https://github.com/mduartelima/standard_project_defaults/releases/tag/v0.1.3), com notas do `CHANGELOG.md`.
+- Verificado na extensão do VS Code, em sessão nova, que as regras são carregadas via `@AGENTS.md`: resposta sobre commit e push citou a seção 4 do `AGENTS.md` e os itens D-003 e D-004 sem leitura de arquivos. O `/memory` da extensão lista apenas memória automática e não serve a essa verificação.
+- Acrescentada nota de verificação à D-005 em `decisions.md`; `context.md` atualizado.
+
+**Resultado:** Plano de contingência da D-005 dispensado. Verificação no CLI não realizada.
+
+**Arquivos afetados:** `history.md`, `.ai/memory/decisions.md`, `.ai/memory/context.md`
+
+**Pendências:** Verificar o import no CLI, se utilizado.
+
+**Commit:** `docs(ai): registra release 0.1.3 e verificacao do import do agents.md`
+
 ## 2026-11-04 — Versionamento 0.1.3
 
 **Tipo:** documentação
