@@ -26,6 +26,25 @@ MODELO DE ENTRADA — copiar para o topo da lista
 **Commit:** `<hash curto>` — `<mensagem>`
 -->
 
+## 2026-11-04 — Consolidação do projeto para continuidade
+
+**Tipo:** documentação
+**Escopo:** geral
+
+**Contexto:** Necessidade de retomar o trabalho a partir de uma cópia da pasta em outro computador.
+
+**Ações realizadas:**
+- Criado `.ai/chats/2026-11-04-continuidade-projeto.md` com resumo, passos de retomada, linha do tempo, decisões D-001 a D-005, acordos de trabalho com o agente, fatos verificados e pendências.
+- Acrescentado em `.ai/memory/context.md` o ponteiro para esse arquivo.
+
+**Resultado:** Estado do projeto recuperável a partir de `context.md`, `history.md`, `decisions.md` e do arquivo de continuidade. Busca RAG por "como retomar o projeto em outro computador" retorna o arquivo; `rag/eval.py` com 3/3. Retomada em outro computador não testada.
+
+**Arquivos afetados:** `.ai/chats/2026-11-04-continuidade-projeto.md`, `.ai/memory/context.md`, `history.md`
+
+**Pendências:** Nenhuma além das listadas no arquivo de continuidade.
+
+**Commit:** `docs(ai): consolida o estado do projeto para continuidade`
+
 ## 2026-11-04 — Release 0.1.3 publicada e import do AGENTS.md verificado
 
 **Tipo:** documentação

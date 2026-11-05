@@ -3,6 +3,8 @@
 > Fonte da verdade sobre o **estado presente**. Reescrever a cada sessão relevante; não acumular histórico (isso é papel do `history.md`).
 > Última atualização: 2026-11-04
 
+> Retomada em outro computador ou nova sessão: ver `.ai/chats/2026-11-04-continuidade-projeto.md` (estado, decisões, acordos e pendências consolidados).
+
 ## Objetivo do projeto
 <O que o projeto entrega, em 2–3 frases.>
 
